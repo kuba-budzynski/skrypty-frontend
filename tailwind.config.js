@@ -3,9 +3,17 @@ module.exports = {
     removeDeprecatedGapUtilities: true,
     purgeLayersByDefault: true,
   },
-  purge: [],
+  purge: [
+    './src/**/*.html',
+    './src/**/*.tsx',
+    './src/**/*.jsx',
+    './src/**/*.js',
+    './src/**/*.tx',
+  ],
   theme: {
-    extend: {},
+    extend: {
+      
+    },
   },
   variants: {},
   plugins: [],
@@ -27,12 +35,14 @@ module.exports = {
       'xl': '1280px',
       // => @media (min-width: 1280px) { ... }
 
-      'xxl': '2560px',
+      'xxl': '1920px',
+      // => @media (min-width: 1920px) { ... }
+
+      'xxxl': '2560px',
       // => @media (min-width: 2560px) { ... }
 
       'navBar': '768px'
       // => @media (min-width: 800px) { ... }
-
     }
   },
   extend: {

@@ -18,14 +18,12 @@ export default function Home(): JSX.Element{
       </Head>
       <NavBar />
       
-      {/* <div className="h-screen w-screen max-w-full bg-gray-200">
+      <div className="h-screen w-screen max-w-full bg-gray-200">
         <div className="w-2/3 mx-auto pt-40">
           <SVG svg={back} size="divSize" />
         </div>
       </div>
-      <Logos />
-      <CallToAction /> */}
-      
+      <Logos></Logos>
       <Features ></Features>
       <CallToAction />
     </div>
