@@ -9,6 +9,7 @@ import {
     AccordionIcon,
     Box
 } from "@chakra-ui/core";
+import Footer from '../components/Footer';
 
 function FAQ() {
     return (
@@ -18,41 +19,12 @@ function FAQ() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <NavBar />
-            <div className="w-screen h-screen max-w-full bg-gray-100">
-                <div className="w-1/2 mx-auto mt-40">
-                    <Accordion defaultIndex={[0]} allowToggle>
-                        <AccordionItem>
-                            <AccordionHeader>
-                                <Box flex="1" textAlign="left">
-                                    Section 1 title
-                             </Box>
-                                <AccordionIcon />
-                            </AccordionHeader>
-                            <AccordionPanel pb={4}>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                                veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                                commodo consequat.
-                         </AccordionPanel>
-                        </AccordionItem>
-
-                        <AccordionItem>
-                            <AccordionHeader>
-                                <Box flex="1" textAlign="left">
-                                    Section 2 title
-                            </Box>
-                                <AccordionIcon />
-                            </AccordionHeader>
-                            <AccordionPanel pb={4}>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                                veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                                commodo consequat.
-                        </AccordionPanel>
-                        </AccordionItem>
-                    </Accordion>
+            <div className="w-screen min-h-screen max-w-full bg-gray-100">
+                <div className="w-1/2 mx-auto">
+                    
                 </div>
             </div>
+            <Footer />
         </>
 
     )

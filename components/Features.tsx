@@ -32,7 +32,7 @@ const Features: React.FC = () => {
                             <div className="flex flex-col sm:flex-row items-center justify-center h-full p-4 bg-gray-100">
                                 <div className="flex items-center justify-center">
                                     <div className="h-64 w-64">
-                                        <SVG svg={shield} size="divSize"></SVG>
+                                        <SVG svg={shield} size="divSize" tag="doświadczenie i wiedza"></SVG>
                                     </div>
                                 </div>
                                 <div className="ml-4 sm:ml-10">
@@ -50,7 +50,7 @@ const Features: React.FC = () => {
                             <div className="flex flex-col sm:flex-row items-center justify-center h-full p-4">
                                 <div className="flex items-center justify-center">
                                     <div className="h-64 w-64">
-                                        <SVG svg={toolbox} size="divSize"></SVG>
+                                        <SVG svg={toolbox} size="divSize" tag="profesjonalne narzędzia"></SVG>
                                     </div>
                                 </div>
                                 <div className="ml-4 sm:ml-10">
@@ -67,7 +67,7 @@ const Features: React.FC = () => {
                             <div className="flex flex-col sm:flex-row items-center justify-center h-full p-4 bg-gray-100">
                                 <div className="flex items-center justify-center">
                                     <div className="h-64 w-64">
-                                        <SVG svg={team} size="divSize"></SVG>
+                                        <SVG svg={team} size="divSize" tag="zgrany i fachowy zespół"></SVG>
                                     </div>
                                 </div>
                                 <div className="ml-4 sm:ml-10">
@@ -84,7 +84,7 @@ const Features: React.FC = () => {
                             <div className="flex flex-col sm:flex-row items-center justify-center h-full p-4">
                                 <div className="flex items-center justify-center">
                                     <div className="h-64 w-64">
-                                        <SVG svg={guarantee} size="divSize"></SVG>
+                                        <SVG svg={guarantee} size="divSize" tag="gwarancja jakości"></SVG>
                                     </div>
                                 </div>
                                 <div className="ml-4 sm:ml-10">
@@ -101,7 +101,7 @@ const Features: React.FC = () => {
                             <div className="flex flex-col sm:flex-row items-center justify-center h-full p-4 bg-gray-100">
                                 <div className="flex items-center justify-center">
                                     <div className="h-64 w-64">
-                                        <SVG svg={piggy} size="divSize"></SVG>
+                                        <SVG svg={piggy} size="divSize" tag="konkurencyjne ceny i oszczędności"></SVG>
                                     </div>
                                 </div>
                                 <div className="ml-4 sm:ml-10">
@@ -118,7 +118,7 @@ const Features: React.FC = () => {
                             <div className="flex flex-col sm:flex-row items-center justify-center h-full p-4">
                                 <div className="flex items-center justify-center">
                                     <div className="h-64 w-64">
-                                        <SVG svg={time} size="divSize"></SVG>
+                                        <SVG svg={time} size="divSize" tag="terminowość i szybkość"></SVG>
                                     </div>
                                 </div>
                                 <div className="ml-4 sm:ml-10">
@@ -135,7 +135,7 @@ const Features: React.FC = () => {
                             <div className="flex flex-col sm:flex-row items-center justify-center h-full p-4 bg-gray-100">
                                 <div className="flex items-center justify-center">
                                     <div className="h-64 w-64">
-                                        <SVG svg={plan} size="divSize"></SVG>
+                                        <SVG svg={plan} size="divSize" tag="elastyczność w doborze materiałów i sprzętu"></SVG>
                                     </div>
                                 </div>
                                 <div className="ml-4 sm:ml-10">
@@ -152,7 +152,7 @@ const Features: React.FC = () => {
                             <div className="flex flex-col sm:flex-row items-center justify-center h-full p-4">
                                 <div className="flex items-center justify-center">
                                     <div className="h-64 w-64">
-                                        <SVG svg={covid} size="divSize"></SVG>
+                                        <SVG svg={covid} size="divSize" tag="bezpieczeństwo i BHP"></SVG>
                                     </div>
                                 </div>
                                 <div className="ml-4 sm:ml-10">

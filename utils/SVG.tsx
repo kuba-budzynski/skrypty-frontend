@@ -6,8 +6,9 @@ interface Props{
     svg: string,
     width?: number,
     height?: number,
-    size?: Size
-    className?: string
+    size?: Size,
+    className?: string,
+    tag?: string
 }
 
 const SVG: React.FC<Props> = (props: Props) => {
@@ -37,7 +38,9 @@ const SVG: React.FC<Props> = (props: Props) => {
                 height: '100%',
                 overflow: 'hidden',
                 objectFit: props.size ? 'contain' : 'scale-down'
-            }}/>
+            }}
+            alt={props.tag}
+            />
         </div>
     )
 }

@@ -7,6 +7,9 @@ import back from '../public/bg3.svg'
 import CallToAction from './../components/CallToAction';
 import Features from '../components/Features'
 import Logos from '../components/Logos'
+import TimeLine from '../components/TimeLine'
+import Footer from '../components/Footer'
+import Stats from './../components/Stats';
 
 export default function Home(): JSX.Element{
 
@@ -19,13 +22,17 @@ export default function Home(): JSX.Element{
       <NavBar />
       
       <div className="h-screen w-screen max-w-full bg-gray-200">
-        <div className="w-2/3 mx-auto pt-40">
+        {/* <div className="w-2/3 mx-auto pt-40">
           <SVG svg={back} size="divSize" />
-        </div>
+        </div> */}
       </div>
+      
       <Logos></Logos>
+      <Stats></Stats>
       <Features ></Features>
       <CallToAction />
+      <TimeLine/>
+      <Footer />
     </div>
   )
 }

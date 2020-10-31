@@ -47,11 +47,11 @@ module.exports = {
   },
   extend: {
     colors: {
-      transparent: 'transparent',
-      black: "#000",
-      white: "#fff",
-      accent: {
-        dark: '#252F3F'
+      "transparent": 'transparent',
+      "black": "#000",
+      "white": "#fff",
+      "accent": {
+        "dark": '#252F3F'
       }
     }
   }

@@ -130,7 +130,7 @@ const NavBar = () => {
 
                         <Link href="/">
                             <a className="text-base leading-6 font-medium text-gray-500 hover:text-gray-900 focus:outline-none focus:text-gray-900 transition ease-in-out duration-150">
-                                Home
+                               Home
                             </a>
                         </Link>
 
