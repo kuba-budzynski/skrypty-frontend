@@ -5,9 +5,9 @@ import Footer from '../components/Footer'
 import Gallery from 'react-photo-gallery'
 import Carousel, { Modal, ModalGateway } from "react-images";
 
-import handler from '../pages/api/getImages';
+const Prismic = require('prismic-javascript');
 
-const Galeria = ({images}) => {
+const Galeria = ({data}) => {
     
     const [currentImage, setCurrentImage] = useState(0);
     const [viewerIsOpen, setViewerIsOpen] = useState(false);
@@ -21,7 +21,17 @@ const Galeria = ({images}) => {
         setViewerIsOpen(false);
     };
 
-    console.log("Images: ", images)
+    const images = data.map(d => {
+        return {
+            src: d.url,
+            width: d.dimensions.width,
+            height: d.dimensions.height,
+            srcSet: Object.keys(d.sizes).map((key, index) => `${d.sizes[key].url} ${d.sizes[key].dimensions.width}w`),
+            alt: d.desc,
+            key: d.id,
+            title: d.alt
+        }
+    })
 
     return (
         <>
@@ -42,7 +52,7 @@ const Galeria = ({images}) => {
                                     currentIndex={currentImage}
                                     views={images.map(x => ({
                                         ...x,
-                                        srcset: x.srcSet,
+                                        srcSet: x.srcSet,
                                         caption: x.title
                                     }))}
                                 />
@@ -61,39 +71,45 @@ const Galeria = ({images}) => {
 
 export async function getStaticProps(context) {
 
-    var cloudinary = require('cloudinary').v2
-    const images = []
-    cloudinary.config({
-        cloud_name: 'wrob-el',
-        api_key: process.env.CLOUDINARY_API_KEY,
-        api_secret: process.env.CLOUDINARY_API_SECRET
+    const { results } = await Prismic.getApi(process.env.PRISMIC_CLIENT_ENDPOINT, { accessToken: process.env.PRISMIC_CLIENT_TOKEN }).then(function (api) {
+        return api.query(Prismic.Predicates.at('document.type', 'image'), { pageSize: 100}); 
     });
 
-    const {resources} = await cloudinary.api.resources({
-        type: 'upload',
-        prefix: 'gallery/',
-        max_results: 100
-        },
-        function (error, result) {
-            if(!error){
-                return (
-                    result.resources.map((img) => {
-                    return {
-                        src: img.secure_url,
-                        width: img.width,
-                        height: img.height
-                    }
-                }))              
-            }
-        });
     return {
         props: {
-            images: resources.map(img => ({
-                src: img.url,
-                width: img.width,
-                height: img.height
-            }))
-        }
+            data: results.map(r => {
+                return{
+                    id: r.id,
+                    desc: r.data.description.length > 0 ? r.data.description[0].text : '',
+                    alt: r.data.zdjecie.alt,
+                    dimensions: r.data.zdjecie.dimensions,
+                    url: r.data.zdjecie.url,
+                    sizes: {
+                        mobile: {
+                            dimensions: r.data.zdjecie.mobile.dimensions,
+                            url: r.data.zdjecie.mobile.url
+                        },
+                        screenSM: {
+                            dimensions: r.data.zdjecie['screen-sm'].dimensions,
+                            url: r.data.zdjecie['screen-sm'].url
+                        },
+                        screenMD: {
+                            dimensions: r.data.zdjecie['screen-md'].dimensions,
+                            url: r.data.zdjecie['screen-md'].url
+                        },
+                        screenXL: {
+                            dimensions: r.data.zdjecie['screen-xl'].dimensions,
+                            url: r.data.zdjecie['screen-xl'].url
+                        },
+                        thumbnail: {
+                            dimensions: r.data.zdjecie.thumbnail.dimensions,
+                            url: r.data.zdjecie.thumbnail.url
+                        }               
+                    }
+                }                
+            })
+        },
+        revalidate: 900
     }
 }
 

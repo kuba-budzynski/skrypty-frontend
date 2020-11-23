@@ -10,6 +10,7 @@ import team from '../public/icons/team.svg';
 import piggy from '../public/icons/piggy.svg';
 import guarantee from '../public/icons/guarantee.svg'
 
+
 const Features: React.FC = () => {
     return (
         <div className="py-12 bg-white mt-24">

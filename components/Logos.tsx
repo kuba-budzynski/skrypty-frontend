@@ -31,7 +31,7 @@ const Logos = () => {
         <>
             <section id="logo-carousell" className="bg-gray-800 text-white pt-4 px-8 md:px-4 w-screen max-w-full mx-auto mt-10">
                 <div className="max-w-6xl mx-auto">
-                    <div className="text-center leading-6 text-2xl md:text-3xl font-bold antialiased font-sans tracking-wider text-gray-400 mt-4">
+                    <div className="text-center leading-6 text-2xl md:text-3xl font-bold antialiased font-sans tracking-wider text-gray-300 mt-4">
                         NAM JUŻ ZAUFALI
                     </div>
                     <Carousel

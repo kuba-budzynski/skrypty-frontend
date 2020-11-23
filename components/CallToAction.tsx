@@ -14,18 +14,28 @@ function CallToAction() {
                         Skontaktuj się z nami.
                     </span>
                 </h2>
-                <div className="mt-8 flex lg:flex-shrink-0 lg:mt-0">
-                    <div className="inline-flex rounded-md shadow">
-                        <Link href="/kontakt">
-                            <a className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out">
-                                Kontakt z nami
+                <div className="mt-8 lg:mt-0">
+                    <div className=" flex lg:flex-shrink-0">
+                        <div className="inline-flex rounded-md shadow">
+                            <Link href="/kontakt">
+                                <a className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out">
+                                    Kontakt z nami
                             </a>
-                        </Link>
+                            </Link>
+                        </div>
+                        <div className="ml-3 inline-flex rounded-md shadow">
+                            <Link href="/oferta">
+                                <a className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-indigo-600 bg-white hover:text-indigo-500 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out">
+                                    Oferta
+                            </a>
+                            </Link>
+                        </div>
+
                     </div>
-                    <div className="ml-3 inline-flex rounded-md shadow">
-                        <Link href="/oferta">
-                            <a className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-indigo-600 bg-white hover:text-indigo-500 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out">
-                                Oferta
+                    <div className="mt-1 text-gray-500 font-bold tracking-wider lg:text-center hover:text-gray-200">
+                        <Link href="/faq">
+                            <a className="text-sm ">
+                                Często zadawane Nam pytania
                             </a>
                         </Link>
                     </div>

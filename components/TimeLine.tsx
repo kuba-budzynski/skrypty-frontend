@@ -7,7 +7,7 @@ function TimeLine() {
     const mini = useMedia({ minWidth: '768px' })
 
     return (
-        <div className="mt-16 bg-gray-200 mx-auto py-16">
+        <div className="bg-gray-200 mx-auto pb-16">
             <div className="text-center pb-16">
                 <span className="text-gray-700 font-extrabold text-5xl tracking-wide">Zobacz jak działamy</span>
                 <br />
@@ -27,7 +27,7 @@ function TimeLine() {
                         }
                     >
                         <h3 className="text-gray-700 text-2xl font-bold">Skontaktuj się z Nami</h3>
-                        <h6 className="text-indigo-500 text-sm">Telefonicznie, mailowo lub osobiście</h6>
+                        <h4 className="text-indigo-500 text-sm font-bold tracking-wider">Telefonicznie, mailowo lub osobiście</h4>
                         <p className="text-gray-500 text-md xl:text-xl">
                             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque nobis molestias cum adipisci soluta accusamus.
                             </p>
@@ -44,7 +44,7 @@ function TimeLine() {
                         }
                     >
                         <h3 className="text-gray-700 text-2xl font-bold">Wykonamy rozeznanie i rekomendacje</h3>
-                        <h6 className="text-indigo-500 text-sm">U Ciebie na miejscu lub telefonicznie</h6>
+                        <h4 className="text-indigo-500 text-sm font-bold tracking-wider">U Ciebie na miejscu lub telefonicznie</h4>
                         <p className="text-gray-500 text-md xl:text-xl">
                             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque nobis molestias cum adipisci soluta accusamus.
                             </p>
@@ -60,7 +60,7 @@ function TimeLine() {
                         }
                     >
                         <h3 className="text-gray-700 text-2xl font-bold">Wykonamy potrzebne pomiary</h3>
-                        <h6 className="text-indigo-500 text-sm">Pozwoli Nam to oszacować koszta projektu</h6>
+                        <h4 className="text-indigo-500 text-sm font-bold tracking-wider">Pozwoli Nam to oszacować koszta projektu</h4>
                         <p className="text-gray-500 text-md xl:text-xl">
                             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque nobis molestias cum adipisci soluta accusamus.
                             </p>
@@ -75,8 +75,8 @@ function TimeLine() {
                             </svg>
                         }
                     >
-                        <h3 className="text-gray-700 text-2xl font-bold">Skonsultujemy z Wami zakres prac</h3>
-                        <h6 className="text-indigo-500 text-sm">Doceniamy ciągły wkład naszych klientów w projekty</h6>
+                        <h3 className="text-gray-700 text-2xl font-bold">Skonsultujemy z Tobą zakres prac</h3>
+                        <h4 className="text-indigo-500 text-sm font-bold tracking-wide">Doceniamy ciągły wkład naszych klientów w projekty</h4>
                         <p className="text-gray-500 text-md xl:text-xl">
                             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque nobis molestias cum adipisci soluta accusamus.
                             </p>
@@ -91,8 +91,8 @@ function TimeLine() {
                             </svg>
                         }
                     >
-                        <h3 className="text-gray-700 text-2xl font-bold">Odpowiemy na Państwa pytania</h3>
-                        <h6 className="text-indigo-500 text-sm">Poprawna komunikacja gwarantuje oczekiwane rezultaty</h6>
+                        <h3 className="text-gray-700 text-2xl font-bold">Odpowiemy na wszystkie Twoje pytania</h3>
+                        <h4 className="text-indigo-500 text-sm font-bold tracking-wider">Komunikacja to klucz do dobrze wykonanej pracy</h4>
                         <p className="text-gray-500 text-md xl:text-xl">
                             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque nobis molestias cum adipisci soluta accusamus.
                             </p>
@@ -107,8 +107,8 @@ function TimeLine() {
                             </svg>
                         }
                     >
-                        <h3 className="text-gray-700 text-2xl font-bold">Uzgodniamy terminy i harmonogram</h3>
-                        <h6 className="text-indigo-500 text-sm">Cenimy sobie zorganizowanie pracy i chlubimy się Naszą terminowością</h6>
+                        <h3 className="text-gray-700 text-2xl font-bold">Opracujemy terminy i harmonogram</h3>
+                        <h4 className="text-indigo-500 text-sm font-bold tracking-wide">Cenimy sobie zorganizowanie pracy i chlubimy się terminowością</h4>
                         <p className="text-gray-500 text-md xl:text-xl">
                             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque nobis molestias cum adipisci soluta accusamus.
                             </p>
@@ -125,7 +125,7 @@ function TimeLine() {
                         }
                     >
                         <h3 className="text-gray-700 text-2xl font-bold">Wykonujemy zlecony projekt</h3>
-                        <h6 className="text-indigo-500 text-sm">W tym etapie realizujemy zlecony projekt, to co lubimy najbardziej</h6>
+                        <h4 className="text-indigo-500 text-sm font-bold tracking-wide">W tym etapie realizujemy zlecony projekt, to co lubimy najbardziej</h4>
                         <p className="text-gray-500 text-md xl:text-xl">
                             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque nobis molestias cum adipisci soluta accusamus.
                             </p>
@@ -141,7 +141,7 @@ function TimeLine() {
                         }
                     >
                         <h3 className="text-gray-700 text-2xl font-bold">Odbierz wykonanie projektu</h3>
-                        <h6 className="text-indigo-500 text-sm">Sprawdzenie wykonania instalacji i zgłaszanie poprawek</h6>
+                        <h4 className="text-indigo-500 text-sm font-bold tracking-wide">Sprawdzenie wykonania instalacji i zgłaszanie poprawek</h4>
                         <p className="text-gray-500 text-md xl:text-xl">
                             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque nobis molestias cum adipisci soluta accusamus.
                             </p>
@@ -157,7 +157,7 @@ function TimeLine() {
                         }
                     >
                         <h3 className="text-gray-700 text-2xl font-bold">Wystaw Nam opinię</h3>
-                        <h6 className="text-indigo-500 text-sm">Pomóż innym oceniając wykonane przez Nas usługi</h6>
+                        <h4 className="text-indigo-500 text-sm font-bold tracking-wide">Pomóż innym oceniając wykonane przez Nas usługi</h4>
                         <p className="text-gray-500 text-md xl:text-xl">
                             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque nobis molestias cum adipisci soluta accusamus.
                             </p>

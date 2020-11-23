@@ -3,8 +3,7 @@ import { Transition } from '@headlessui/react'
 import styles from '../styles/Index.module.scss'
 import Link from 'next/link'
 import SVG from '../utils/SVG';
-
-import valve from '../public/valve.svg'
+import Image from 'next/image';
 
 type States = "solution" | "more" | "mobile" | "pricing" | "docs";
 
@@ -100,21 +99,21 @@ const NavBar = () => {
     }
 
     return (
-        <header className="bg-white" id="navBar">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6" ref={wrapperRef}>
-                <div className="flex justify-between items-center border-b-2 border-gray-200 py-4 navBar:justify-start navBar:space-x-10">
+        <header className="bg-white px-2" id="navBar">
+            <div className="w-full border-b-2 border-gray-200 mx-auto" ref={wrapperRef}>
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 flex justify-between items-center  py-4 navBar:justify-start navBar:space-x-10">
                     <div className="lg:w-0 lg:flex-1">
 
                         <Link href="/">
                             <a className="flex">
-                                <img className="h-8 w-auto sm:h-10" src="https://tailwindui.com/img/logos/workflow-mark-on-white.svg" alt="Workflow" />
+                                <img className="h-8 w-auto sm:h-10" src="https://tailwindui.com/img/logos/v1/workflow-mark-on-dark.svg" alt="Workflow" />
                             </a>
                         </Link>
 
                     </div>
                     <div className={`-mr-2 -my-2 navBar:hidden ${clicked ? 'hidden' : ''}`}>
 
-                        <button onClick={(e) => {
+                        <button name="mobile menu" aria-label="mobile menu" onClick={(e) => {
                             e.preventDefault();
                             toggle('mobile');
                             setClicked(true);

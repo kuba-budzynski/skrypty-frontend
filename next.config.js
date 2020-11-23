@@ -9,7 +9,10 @@ module.exports = withImages({
         MONGODB_PASSOWRD: '5pd0McTfCHnumYH0',
         CLOUDINARY_API_KEY: '849832295865831',
         CLOUDINARY_API_SECRET: 'rqxWo192Rm0hS_-iatlGI30YVOc',
-        CLOUDINARY_URL: 'cloudinary://849832295865831:rqxWo192Rm0hS_-iatlGI30YVOc@wrob-el'
-
+        CLOUDINARY_URL: 'cloudinary://849832295865831:rqxWo192Rm0hS_-iatlGI30YVOc@wrob-el',
+        PRISMIC_CLIENT_ENDPOINT: 'https://wrob-el.cdn.prismic.io/api/v2',
+        PRISMIC_CLIENT_ID: 'X53wrBAAACIAVOXx',
+        PRISMIC_CLIENT_SECRET: '4c8ff1eef0d1c76f0fa772ea9053e688',
+        PRICMIC_CLIENT_TOKEN: 'MC5YNTN3ckJBQUFDQUFWT1h5.E--_ve-_ve-_ve-_ve-_vWDvv70H77-9OO-_ve-_vVzvv73vv71W77-977-9R0zvv73vv70a77-9IQREX--_ve-_vRg'
     },
 })
