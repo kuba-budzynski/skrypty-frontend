@@ -4,11 +4,11 @@ module.exports = {
     purgeLayersByDefault: true,
   },
   purge: [
-    './**/*.html',
-    './**/*.tsx',
-    './**/*.jsx',
-    './**/*.js',
-    './**/*.tx',
+    './components/*.html',
+    './components/*.tsx',
+    './components/*.jsx',
+    './components/*.js',
+    './components/*.tx',
   ],
   theme: {
     extend: {

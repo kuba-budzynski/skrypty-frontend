@@ -22,7 +22,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "components/Uploader.js", "components/ImageDrop.js", "components/SideGallert.js"  ],
   "exclude": [
     "node_modules"
   ]

@@ -1,11 +1,9 @@
 import '../styles/globals.scss'
-import { ThemeProvider } from "@chakra-ui/core";
-import 'react-vertical-timeline-component/style.min.css';
-import '@brainhubeu/react-carousel/lib/style.css';
+import { ThemeProvider, theme } from '@chakra-ui/core';
 
 function MyApp({ Component, pageProps }) {
   return (
-    <ThemeProvider>
+    <ThemeProvider theme={theme}>
       <Component {...pageProps} />
     </ThemeProvider>
   )

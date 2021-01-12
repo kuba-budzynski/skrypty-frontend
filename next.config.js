@@ -15,4 +15,7 @@ module.exports = withImages({
         PRISMIC_CLIENT_SECRET: '4c8ff1eef0d1c76f0fa772ea9053e688',
         PRICMIC_CLIENT_TOKEN: 'MC5YNTN3ckJBQUFDQUFWT1h5.E--_ve-_ve-_ve-_ve-_vWDvv70H77-9OO-_ve-_vVzvv73vv71W77-977-9R0zvv73vv70a77-9IQREX--_ve-_vRg'
     },
+    images: {
+      domains: ['images.unsplash.com', 'django-object-recognition.s3.eu-central-1.amazonaws.com']
+    }
 })
