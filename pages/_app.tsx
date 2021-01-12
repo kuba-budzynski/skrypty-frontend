@@ -1,4 +1,5 @@
 import '../styles/globals.scss'
+import "tailwindcss/tailwind.css";
 import { ThemeProvider, theme } from '@chakra-ui/core';
 
 function MyApp({ Component, pageProps }) {
