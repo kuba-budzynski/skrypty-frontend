@@ -4,8 +4,8 @@ module.exports = withImages({
     return config
   },
   env: {
-        BACKEND: "http://app-back.tk:8000",
-        ADMIN: "http://app-back.tk:8000/admin/"
+        BACKEND: "https://app-back.tk:8000",
+        ADMIN: "https://app-back.tk:8000/admin/"
     },
     images: {
       domains: ['images.unsplash.com', 'django-object-recognition.s3.eu-central-1.amazonaws.com']
