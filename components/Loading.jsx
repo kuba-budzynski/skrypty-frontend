@@ -1,9 +1,9 @@
 import React from 'react'
-import {CgSpinner} from "react-icons/Cg";
+import {FaSpinner} from "react-icons/fa";
 
 const Loading = () => (
   <div className="mx-auto p-2 align-center flex align-center justify-center flex-0">
-    <CgSpinner size="12rem" className="animate-spin" />
+    <FaSpinner size="12rem" className="animate-spin" />
   </div>
 )
 
