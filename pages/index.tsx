@@ -24,7 +24,7 @@ export default function Home(): JSX.Element{
       <div className="antialiased bg-body text-body font-body">
         <NavBar />
 
-        <div className="pt-12 text-center mt-28">
+        <div className="pt-12 text-center mt-20">
           <div className="max-w-lg mx-auto mb-8">
             <h2 className="text-3xl md:text-4xl mb-4 font-bold font-heading">
               <span>Rozpoznawanie </span>

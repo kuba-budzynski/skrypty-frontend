@@ -1,8 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styles from '../styles/DropZone.module.scss'
 import axios from 'axios'
+import Router from 'next/router'
+import auth from '../utils/AuthProvider'
+import { store } from 'react-notifications-component';
 
-const DropZone = () => {
+const DropZone = ({method}) => {
 
     const [selectedFiles, setSelectedFiles] = useState([]);
     const [errorMessage, setErrorMessage] = useState('');
@@ -54,13 +57,20 @@ const DropZone = () => {
 
     const handleFiles = (files) => {
         for (let i = 0; i < files.length; i++) {
-            if (validateFile(files[i])) {
+            if(files[i].size >= 2500000){
+                files[i]['invalid'] = true;
                 setSelectedFiles(prevArray => [...prevArray, files[i]]);
-            } else {
+                setErrorMessage('File too large - max 2.5mb');
+                setUnsupportedFiles(prevArray => [...prevArray, files[i]]);
+            } 
+            else if(!validateFile(files[i])) {
                 files[i]['invalid'] = true;
                 setSelectedFiles(prevArray => [...prevArray, files[i]]);
                 setErrorMessage('File type not permitted');
                 setUnsupportedFiles(prevArray => [...prevArray, files[i]]);
+            }
+            else{
+                setSelectedFiles(prevArray => [...prevArray, files[i]]);
             }
         }
     }
@@ -86,21 +96,15 @@ const DropZone = () => {
     }
 
     const removeFile = (name) => {
-        // find the index of the item
-        // remove the item from array
-
         const validFileIndex = validFiles.findIndex(e => e.name === name);
         validFiles.splice(validFileIndex, 1);
-        // update validFiles array
         setValidFiles([...validFiles]);
         const selectedFileIndex = selectedFiles.findIndex(e => e.name === name);
         selectedFiles.splice(selectedFileIndex, 1);
-        // update selectedFiles array
         setSelectedFiles([...selectedFiles]);
         const unsupportedFileIndex = unsupportedFiles.findIndex(e => e.name === name);
         if (unsupportedFileIndex !== -1) {
             unsupportedFiles.splice(unsupportedFileIndex, 1);
-            // update unsupportedFiles array
             setUnsupportedFiles([...unsupportedFiles]);
         }
     }
@@ -129,32 +133,82 @@ const DropZone = () => {
         }
     }
 
-    const uploadFiles = () => {
+    const uploadFiles = async () => {
+        let ok = true
         uploadModalRef.current.style.display = 'block';
         uploadRef.current.innerHTML = 'File(s) Uploading...';
         for (let i = 0; i < validFiles.length; i++) {
             const formData = new FormData();
             formData.append('image', validFiles[i]);
-            axios.post('URL', formData, {
-            onUploadProgress: (progressEvent) => {
-                const uploadPercentage = Math.floor((progressEvent.loaded / progressEvent.total) * 100);
-                progressRef.current.innerHTML = `${uploadPercentage}%`;
-                progressRef.current.style.width = `${uploadPercentage}%`;
-                if (uploadPercentage === 100) {
-                    uploadRef.current.innerHTML = 'File(s) Uploaded';
-                    validFiles.length = 0;
-                    setValidFiles([...validFiles]);
-                    setSelectedFiles([...validFiles]);
-                    setUnsupportedFiles([...validFiles]);
+            const res = await axios.post(process.env.BACKEND + "/upload/", formData, {
+                headers: {
+                    'Authorization': auth.getBearer(),
+                    'content-type': 'multipart/form-data'
+                },
+                onUploadProgress: (progressEvent) => {
+                    const uploadPercentage = Math.floor((progressEvent.loaded / progressEvent.total) * 100);
+                    progressRef.current.style.backgroundColor = 'blue';   
+                    progressRef.current.innerHTML = `${uploadPercentage}%`;
+                    progressRef.current.style.width = `${uploadPercentage}%`;
+                    if (uploadPercentage === 100) {
+                        uploadRef.current.innerHTML = 'File(s) Uploaded';
+                        validFiles.length = 0;
+                        setValidFiles([...validFiles]);
+                        setSelectedFiles([...validFiles]);
+                        setUnsupportedFiles([...validFiles]);
+                    }
+                }
+            })
+            .catch(() => {
+                uploadRef.current.innerHTML = `<span class=${styles.error}>Error Uploading File(s)</span>`;
+                progressRef.current.style.backgroundColor = 'red';     
+                ok = false
+                store.addNotification({
+                    title: "Upload error",
+                    message: "Hey, please try again later",
+                    type: "danger",
+                    insert: "top",
+                    container: "top-right",
+                    animationIn: ["animate__animated", "animate__fadeIn"],
+                    animationOut: ["animate__animated", "animate__fadeOut"],
+                    dismiss: {
+                        duration: 5000,
+                        onScreen: true
+                    }
+                });
+            });
+            if(res){
+                if(res.data.success){
+                    uploadModalRef.current.style.display = 'none';
+                    store.addNotification({
+                        title: `Congrats, you've uploaded new image`,
+                        message: `Wait for redirection`,
+                        type: "success",
+                        insert: "top",
+                        container: "bottom-center",
+                        animationIn: ["animate__animated", "animate__fadeIn"],
+                        animationOut: ["animate__animated", "animate__fadeOut"],
+                        dismiss: {
+                            duration: 5000,
+                            onScreen: true
+                        }
+                    });
+                    setTimeout(function () {          
+                        Router.push({
+                            pathname: '/results',
+                            query: { 
+                                image_id: res.data.image_id,
+                                'method': method
+                            },
+                        })
+                    }, 3000);   
+                }
+                else{
+                    uploadRef.current.innerHTML = `<div><span class=${styles.error}>${res.data.message}</span><span>${res.data.classification ? `safe: ${(res.data.classification.safe*100).toFixed(2)}% unsafe: ${(res.data.classification.unsafe*100).toFixed(2)}%`: ""}</span></div>`;
+                    progressRef.current.style.backgroundColor = 'red';
+                    ok = false
                 }
             }
-        })
-        .catch(() => {
-            // If error, display a message on the upload modal
-            uploadRef.current.innerHTML = `<span class=${styles.error}>Error Uploading File(s)</span>`;
-            // set progress bar background color to red
-            progressRef.current.style.backgroundColor = 'red';
-        });
         }
     }
 
@@ -201,15 +255,12 @@ const DropZone = () => {
                             </div>
                         )
                     }
-
                 </div>
-                {/* {unsupportedFiles.length === 0 && validFiles.length ? <button className={styles.fileUploadBtn} onClick={() => uploadFiles()}>Upload Files</button> : ''} 
-                    {unsupportedFiles.length ? <p>Please remove all unsupported files.</p> : ''} */}
                 <div className="container mx-auto flex ">
                     {
                         unsupportedFiles.length === 0 && validFiles.length ?
                         <button className="inline-block py-4 px-8 text-md text-white text-center font-semibold leading-none bg-blue-600 hover:bg-blue-700 rounded mx-auto my-4 disabled:opacity-50 disabled:bg-gray-300"
-                            onClick={() => uploadFiles()}
+                            onClick={async () => await uploadFiles()}
                         >
                             UPLOAD {validFiles.length} NEW {validFiles.length == 1 ? "IMAGE" : "IMAGES"}
                         </button>:

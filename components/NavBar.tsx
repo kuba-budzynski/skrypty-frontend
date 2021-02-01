@@ -5,6 +5,7 @@ import Link from 'next/link'
 import SVG from '../utils/SVG';
 import Image from 'next/image';
 import logo from '../public/assets/images/logo.svg'
+import auth from '../utils/AuthProvider'
 
 type States = "solution" | "more" | "mobile" | "pricing" | "docs";
 
@@ -149,11 +150,10 @@ const NavBar = (props: Props) => {
                                 FAQ
                             </a>
                         </Link>
-                        <Link href="/admin">
-                            <a className="text-base leading-6 font-medium text-gray-500 hover:text-gray-900 focus:outline-none focus:text-gray-900 transition ease-in-out duration-150">
-                                ADMIN DASHBOARD
-                            </a>
-                        </Link>
+                        <a className="text-base leading-6 font-medium text-gray-500 hover:text-gray-900 focus:outline-none focus:text-gray-900 transition ease-in-out duration-150"
+                             target="_blank" href={process.env.ADMIN || '/admin'}>
+                            ADMIN DASHBOARD
+                        </a>
                     </nav>
                     <div className="hidden lg:flex items-center justify-end space-x-2 lg:flex-1 lg:w-0">
                         <span className="inline-flex rounded-md shadow-sm">
@@ -247,16 +247,14 @@ const NavBar = (props: Props) => {
                                             </Link>
                                        
 
-                                            <Link href="/admin">
-                                                <a  className="-m-3 p-3 flex items-center space-x-3 rounded-md hover:bg-gray-100 transition ease-in-out duration-150">
-                                                    <svg className="flex-shrink-0 h-6 w-6 text-indigo-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                                                    </svg>
-                                                    <div className="text-base leading-6 font-medium text-gray-900">
-                                                        ADMIN DASHBAORD
+                                            <a className="-m-3 p-3 flex items-center space-x-3 rounded-md hover:bg-gray-100 transition ease-in-out duration-150" target="_blank" href={process.env.ADMIN || "/admin"}>
+                                                <svg className="flex-shrink-0 h-6 w-6 text-indigo-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                                                </svg>
+                                                <div className="text-base leading-6 font-medium text-gray-900">
+                                                    ADMIN DASHBAORD
                                                 </div>
-                                                </a>
-                                            </Link>
+                                            </a>
 
                                         </nav>
                                     </div>
@@ -277,7 +275,6 @@ const NavBar = (props: Props) => {
                                                 </a>
                                             </Link>
                                         </span>
-                    
                                     </div>
                                 </div>
                             </div>
