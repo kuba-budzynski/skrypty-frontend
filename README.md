@@ -1,30 +1,34 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Basic frontend for image recognition app for CS class
 
-## Getting Started
+### AUthorize to upload an image and get list of recognized objects and image with outlines.
+#### Images stored on AWS S3 bucket
 
-First, run the development server:
+![image](https://user-images.githubusercontent.com/72972091/120122288-2ab36b00-c1a8-11eb-8e36-25d4b6225911.png)
 
-```bash
-npm run dev
-# or
-yarn dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+![image](https://user-images.githubusercontent.com/72972091/120122336-7c5bf580-c1a8-11eb-9576-6c748b3386de.png)
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
-## Learn More
+![image](https://user-images.githubusercontent.com/72972091/120122349-90075c00-c1a8-11eb-8869-7450cc7fd6ee.png)
 
-To learn more about Next.js, take a look at the following resources:
+![image](https://user-images.githubusercontent.com/72972091/120122362-a01f3b80-c1a8-11eb-9b12-99488438793d.png)
+![image](https://user-images.githubusercontent.com/72972091/120122371-b0371b00-c1a8-11eb-8040-073d3ec260d7.png)
+![image](https://user-images.githubusercontent.com/72972091/120122390-c513ae80-c1a8-11eb-9817-fc8d4aa61e67.png)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+![image](https://user-images.githubusercontent.com/72972091/120122540-b974b780-c1a9-11eb-9c55-c94adc384a66.png)
+![image](https://user-images.githubusercontent.com/72972091/120122545-c1345c00-c1a9-11eb-91ca-de8cc57c3fde.png)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+![image](https://user-images.githubusercontent.com/72972091/120122555-cc878780-c1a9-11eb-8354-f8389ad7e666.png)
 
-## Deploy on Vercel
+![image](https://user-images.githubusercontent.com/72972091/120122587-fb9df900-c1a9-11eb-812a-1f3b66028f7c.png)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## TinyYolov3
+![image](https://user-images.githubusercontent.com/72972091/120122595-08225180-c1aa-11eb-85ee-3644d3fa4142.png)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## RetinaNet
+![image](https://user-images.githubusercontent.com/72972091/120122604-183a3100-c1aa-11eb-9100-38c78dbf834c.png)
+
+## YOLOv3
+![image](https://user-images.githubusercontent.com/72972091/120122610-28eaa700-c1aa-11eb-9cb4-5b5cfe4e4537.png)
+
+![image](https://user-images.githubusercontent.com/72972091/120122639-520b3780-c1aa-11eb-8d34-150dbfa64354.png)
